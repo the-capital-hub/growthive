@@ -1,0 +1,1 @@
+export { GrowthHiveTrendSection } from "./GrowthHiveTrendSection";
