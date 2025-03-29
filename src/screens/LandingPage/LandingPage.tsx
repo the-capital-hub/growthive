@@ -6,6 +6,7 @@ import { GrowthHivePerksSection } from "./sections/GrowthHivePerksSection";
 import { GrowthHiveTrendSection } from "./sections/GrowthHiveTrendSection";
 import { HeroSection } from "./sections/HeroSection/HeroSection";
 import { WhatWeDoSection } from "./sections/WhatWeDoSection";
+import FillLight from "../../Images/fillLight.png";
 
 export const LandingPage = (): JSX.Element => {
   // Background stars data for reuse
@@ -96,9 +97,9 @@ export const LandingPage = (): JSX.Element => {
 
         {/* Decorative elements */}
         <img
-          className="absolute w-[139px] h-[139px] top-[1398px] right-[68px]"
+          className="absolute w-[539px] h-[539px] top-[1398px] right-[0]"
           alt="Sketch annotation"
-          src="/sketch-annotation-element-brush-pen-icon-thunder-flash.svg"
+          src={FillLight}
         />
       </div>
     </div>

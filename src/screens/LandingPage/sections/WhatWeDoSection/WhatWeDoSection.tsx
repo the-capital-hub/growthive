@@ -19,6 +19,23 @@ export const WhatWeDoSection = (): JSX.Element => {
 
   return (
     <section className="flex flex-col w-full h-[100vh] items-center gap-[54px] py-12 bg-no-repeat bg-center bg-contain" style={{ backgroundImage: `url(${RingFrame})` }}>
+      
+      {/* ✨ Twinkling Stars */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(40)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${1 + Math.random() * 3}s`,
+              opacity: Math.random(),
+            }}
+          />
+        ))}
+      </div>
+
       <div className="flex flex-col items-center gap-10 w-full">
         {/* Trust banner */}
         <div className="relative" >

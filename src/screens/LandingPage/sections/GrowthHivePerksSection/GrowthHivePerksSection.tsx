@@ -1,8 +1,6 @@
-import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const GrowthHivePerksSection = (): JSX.Element => {
-  // Data for perk cards to enable mapping
   const perks = [
     {
       id: 1,
@@ -25,65 +23,53 @@ export const GrowthHivePerksSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-20 w-full max-w-[1374px] mx-auto py-10">
-      <div className="flex flex-col items-center">
-        <h2 className="pb-[26px] [text-shadow:0px_1px_0px_#00000012] [background:linear-gradient(168deg,rgba(255,255,255,1)_65%,rgba(255,255,255,0.43)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-['Inter',Helvetica] font-bold text-transparent text-[68px] text-center tracking-[-0.20px] leading-[64px]">
-          What We Do
-        </h2>
+    <section className="relative overflow-hidden flex flex-col items-center gap-20 w-full max-w-[1374px] mx-auto py-10">
 
-        <div className="px-1.5 w-full">
-          <p className="w-full max-w-[1250px] mx-auto font-['Inter',Helvetica] font-medium text-[#a9a9a9] text-lg text-center leading-[30px]">
-            At GrowtHive, we connect visionary early-stage startups with a
-            trusted network of angel investors. Our mission is to empower
-            founders who are driven by bold ambitions and a vision to shape the
-            future.
-          </p>
-        </div>
+      {/* ✨ Twinkling Stars */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(40)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${1 + Math.random() * 3}s`,
+              opacity: Math.random(),
+            }}
+          />
+        ))}
       </div>
 
-      <div className="flex flex-col items-center gap-20 w-full">
-        <div className="flex flex-wrap items-center justify-center gap-[27px] w-full">
-          {perks.slice(0, 2).map((perk) => (
-            <Card
-              key={perk.id}
-              className="flex-1 min-w-[651px] h-[186px] bg-[#ffffff03] rounded-3xl border border-solid border-[#ffffff1a] shadow-[inset_0px_0px_0px_9px_#ffffff08] overflow-hidden"
-            >
-              <CardContent className="h-[166px] p-[9px]">
-                <div className="w-full h-full rounded-2xl border border-solid border-[#ffffff1a] backdrop-blur-[17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(17px)_brightness(100%)] [background:radial-gradient(50%_50%_at_50%_50%,rgba(168,127,255,0.04)_0%,rgba(168,127,255,0)_100%),linear-gradient(0deg,rgba(4,1,21,0.1)_0%,rgba(4,1,21,0.1)_100%)] relative px-8 pt-6">
-                  <h3 className="font-['Inter',Helvetica] font-extrabold text-[#feb514] text-2xl leading-6">
-                    {perk.title}
-                  </h3>
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <h2 className="pb-[26px] font-['Inter',Helvetica] font-bold text-[68px] text-[#a9a9a9] animate-fadeInUp">
+          What We Do
+        </h2>
+        <p className="px-4 max-w-[1250px] font-['Inter',Helvetica] font-medium text-[#a9a9a9] text-lg leading-[30px] animate-fadeInUp">
+          At GrowtHive, we connect visionary early-stage startups with a trusted network of angel investors. Our mission is to empower founders who are driven by bold ambitions and a vision to shape the future.
+        </p>
+      </div>
 
-                  <div className="flex items-center gap-4 absolute top-[73px] left-8">
-                    <div className="self-stretch w-1 bg-[#ffffff3d] rounded-sm h-auto" />
-                    <p className="font-['Outfit',Helvetica] font-normal text-[#c5c5c5] text-2xl leading-10 max-w-[621px]">
-                      {perk.description}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="flex justify-center w-full">
-          <Card className="w-[696px] h-[186px] bg-[#ffffff03] rounded-3xl border border-solid border-[#ffffff1a] shadow-[inset_0px_0px_0px_9px_#ffffff08] overflow-hidden">
-            <CardContent className="h-[166px] p-[9px]">
-              <div className="w-full h-full rounded-2xl border border-solid border-[#ffffff1a] backdrop-blur-[17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(17px)_brightness(100%)] [background:radial-gradient(50%_50%_at_50%_50%,rgba(168,127,255,0.04)_0%,rgba(168,127,255,0)_100%),linear-gradient(0deg,rgba(4,1,21,0.1)_0%,rgba(4,1,21,0.1)_100%)] relative px-8 pt-6">
-                <h3 className="font-['Inter',Helvetica] font-extrabold text-[#feb514] text-2xl leading-6">
-                  {perks[2].title}
+      <div className="relative z-10 flex flex-wrap justify-center gap-[27px] w-full px-4">
+        {perks.map((perk, index) => (
+          <Card
+            key={perk.id}
+            className={`flex-1 min-w-[320px] max-w-[651px] h-[200px] bg-[#ffffff03] rounded-3xl border border-[#ffffff1a] shadow-[inset_0px_0px_0px_9px_#ffffff08] overflow-hidden animate-fadeInUp`}
+            style={{ animationDelay: `${0.2 * index}s` }}
+          >
+            <CardContent className="h-full p-[10px]">
+              <div className="w-full h-full flex flex-col items-start justify-start gap-4 rounded-2xl border border-[#ffffff1a] backdrop-blur-[17px] px-8 pt-6 pb-6 [background:radial-gradient(50%_50%_at_50%_50%,rgba(168,127,255,0.04)_0%,rgba(168,127,255,0)_100%),linear-gradient(0deg,rgba(4,1,21,0.1)_0%,rgba(4,1,21,0.1)_100%)]">
+                <h3 className="font-['Inter',Helvetica] font-extrabold text-[#feb514] text-3xl leading-6 text-left">
+                  {perk.title}
                 </h3>
-
-                <div className="flex items-center gap-4 absolute top-[73px] left-8">
-                  <div className="self-stretch w-1 bg-[#ffffff3d] rounded-sm h-auto" />
-                  <p className="font-['Outfit',Helvetica] font-normal text-[#c5c5c5] text-2xl leading-10 max-w-[621px]">
-                    {perks[2].description}
-                  </p>
-                </div>
+                <p className="font-['Outfit',Helvetica] font-normal text-[#c5c5c5] text-xl text-left">
+                  {perk.description}
+                </p>
               </div>
             </CardContent>
+
           </Card>
-        </div>
+        ))}
       </div>
     </section>
   );

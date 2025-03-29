@@ -1,8 +1,7 @@
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
+import Rocket from "../../../../Images/rocket.png";
 
 export const FooterSection = (): JSX.Element => {
-  // Data for perks cards to enable mapping
   const perks = [
     {
       id: 1,
@@ -22,54 +21,63 @@ export const FooterSection = (): JSX.Element => {
       id: 3,
       title: "Hands-On Post-Investment Support",
       description:
-        "Our support goes beyond funding. We offer personalized mentorship, guidance, and resources to help founders scale and thrive after the investment is made",
+        "Our support goes beyond funding. We offer personalized mentorship, guidance, and resources to help founders scale and thrive after the investment is made.",
       highlighted: false,
     },
   ];
 
   return (
-    <section className="flex flex-col w-full items-start gap-[86px] py-16">
-      <div className="flex flex-col w-full items-start gap-[30px]">
-        <h2 className="w-full font-['Inter',Helvetica] font-bold text-white text-[68px] tracking-[-0.20px] leading-[64px]">
+    <section className="relative flex flex-col w-full items-start gap-20 py-20 px-15 md:px-12 lg:px-24 bg-black overflow-hidden">
+      {/* Background Design */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#fec00f22] rounded-full blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute bottom-[-80px] right-[-80px] w-[300px] h-[300px] bg-[#fec00f33] rounded-full blur-2xl opacity-20" />
+      </div>
+
+      {/* Foreground Content */}
+      <div className="relative z-10 flex flex-col w-full items-start gap-6">
+        <h2 className="text-white text-[48px] md:text-[64px] font-bold leading-tight font-['Inter']">
           GrowtHive Perks
         </h2>
-
-        <p className="w-full font-['Inter',Helvetica] font-medium text-white text-xl text-center tracking-[0] leading-[30px]">
+        <p className="text-white text-lg md:text-xl font-medium font-['Inter'] max-w-3xl">
           At GrowtHive, we go beyond just providing capital. Our mission is to
-          support founders at every critical stage of their entrepreneurial
-          journey.
+          support founders at every critical stage of their entrepreneurial journey.
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-[217px] w-full">
-        <div className="flex flex-col w-full md:w-[630px] items-start gap-10">
+      <div className="relative z-10 flex flex-col md:flex-row items-start justify-between gap-12 w-full">
+        {/* Perks Cards */}
+        <div className="flex flex-col gap-8 w-full md:w-[55%]">
           {perks.map((perk) => (
-            <Card
+            <div
               key={perk.id}
-              className={`w-full ${perk.highlighted ? "bg-[#ffffff1a]" : "bg-transparent"} rounded-[10px] border-0`}
+              className={`flex gap-4 rounded-2xl p-6 transition-all duration-300 hover:bg-[#ffffff0a] hover:shadow-lg ${
+                perk.highlighted ? "bg-[#ffffff1a]" : "bg-transparent"
+              }`}
             >
-              <CardContent className="flex items-start gap-2.5 p-5">
-                {perk.highlighted && (
-                  <div className="relative w-[7px] h-[131px] bg-[#ead013] rounded-[10px]" />
-                )}
-                <div className="flex flex-col w-full items-start gap-5">
-                  <h3 className="w-full font-['Inter',Helvetica] font-extrabold text-[#fec00f] text-[32px] tracking-[0] leading-6">
-                    {perk.title}
-                  </h3>
-                  <p className="w-full font-['Inter',Helvetica] font-normal text-white text-xl tracking-[0] leading-[30px]">
-                    {perk.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+              {perk.highlighted && (
+                <div className="w-[4px] bg-[#FEC00F] rounded-full" />
+              )}
+              <div className="flex flex-col gap-3">
+                <h3 className="text-[#FEC00F] font-extrabold text-xl md:text-2xl font-['Inter'] leading-tight">
+                  {perk.title}
+                </h3>
+                <p className="text-white text-base md:text-lg font-['Inter'] leading-relaxed">
+                  {perk.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
 
-        <img
-          className="w-full md:w-[500px] h-auto md:h-[500px] object-cover"
-          alt="GrowtHive illustration"
-          src="/image-4.png"
-        />
+        {/* Rocket Image */}
+        <div className="w-full md:w-[40%] relative z-10">
+          <img
+            src={Rocket}
+            alt="GrowtHive rocket illustration"
+            className="w-full object-contain rounded-2xl"
+          />
+        </div>
       </div>
     </section>
   );

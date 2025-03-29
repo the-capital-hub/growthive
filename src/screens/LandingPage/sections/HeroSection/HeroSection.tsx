@@ -1,11 +1,35 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import { Avatar, AvatarImage } from "../../../../components/ui/avatar";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
+// Inline yellow star SVG
+const Star = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="#FFD700"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 2L14.8 8.6L22 9.3L17 14.1L18.4 21.2L12 17.8L5.6 21.2L7 14.1L2 9.3L9.2 8.6L12 2Z" />
+  </svg>
+);
+
 export const HeroSection = (): JSX.Element => {
-  // Testimonial data for mapping
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (testimonialsRef.current) {
+      const scrollAmount = 320;
+      testimonialsRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const testimonials = [
     {
       id: 1,
@@ -34,86 +58,68 @@ export const HeroSection = (): JSX.Element => {
       location: "USA, Nevada",
       profileImage: "/profile-2.png",
     },
+    {
+      id: 4,
+      title: "Smooth Experience",
+      content:
+        "Buying with Estatein was seamless. The agents were incredibly responsive and guided me step-by-step. Couldn't be happier!",
+      author: "Laura Kip",
+      location: "USA, Texas",
+      profileImage: "/profile-3.png",
+    },
   ];
 
   return (
-    <section className="flex flex-col w-full items-start gap-20">
-      <div className="w-full items-end gap-[200px] flex">
-        <div className="gap-3.5 flex flex-col items-start relative flex-1 grow">
-          <div className="relative self-stretch mt-[-1.00px] [font-family:'Urbanist',Helvetica] font-semibold text-absolutewhite text-5xl tracking-[0] leading-[72px]">
+    <section className="w-full flex flex-col gap-16 px-4 md:px-8 py-12">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="max-w-3xl space-y-4">
+          <h2 className="text-white text-4xl font-semibold">
             What Our Clients Say
-          </div>
-
-          <div className="relative self-stretch [font-family:'Urbanist',Helvetica] font-medium text-grey-60 text-lg tracking-[0] leading-[27px]">
+          </h2>
+          <p className="text-gray-400 text-base leading-relaxed">
             Read the success stories and heartfelt testimonials from our valued
             clients. Discover why they chose Estatein for their real estate
             needs.
-          </div>
-
-          <div className="relative w-[68px] h-[30px] -top-10 -left-5">
-            <div className="absolute w-[30px] h-[30px] top-0 left-0 bg-[url(/group.png)] bg-[100%_100%]" />
-            <div className="absolute w-[18px] h-[18px] top-1.5 left-9 bg-[url(/group-1.png)] bg-[100%_100%]" />
-            <div className="absolute w-2 h-2 top-[11px] left-[60px] bg-[url(/group-2.png)] bg-[100%_100%]" />
-          </div>
+          </p>
         </div>
-
-        <Button
-          variant="outline"
-          className="px-6 py-[18px] h-auto bg-grey-10 rounded-[10px] border border-solid border-neutral-800"
-        >
-          <span className="[font-family:'Urbanist',Helvetica] font-medium text-absolutewhite text-lg tracking-[0] leading-[27px]">
-            View All Testimonials
-          </span>
+        <Button className="bg-transparent border border-neutral-700 text-white hover:bg-neutral-800 rounded-md px-5 py-2 transition">
+          View All Testimonials
         </Button>
       </div>
 
-      <div className="flex-col items-start gap-[50px] self-stretch w-full flex">
-        <div className="flex items-start gap-[30px] w-full">
+      {/* Scrollable Testimonials Row */}
+      <div className="relative">
+        <div
+          ref={testimonialsRef}
+          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory px-1"
+        >
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              className="flex flex-col items-start gap-10 p-[50px] flex-1 bg-grey-08 rounded-xl border border-solid border-neutral-800"
+              className="min-w-[300px] max-w-sm flex-shrink-0 bg-neutral-900 border border-neutral-800 rounded-xl p-6 text-white snap-start"
             >
-              <CardContent className="p-0 space-y-10 w-full">
-                <div className="inline-flex items-start gap-2.5">
-                  {[...Array(5)].map((_, index) => (
-                    <div
-                      key={index}
-                      className="inline-flex items-start gap-2.5 p-2.5 bg-grey-10 rounded-[100px] border border-solid border-neutral-800"
-                    >
-                      <img
-                        className="w-[21.31px] h-[20.36px]"
-                        alt="Star rating"
-                        src="/shape.svg"
-                      />
-                    </div>
-                  ))}
-                </div>
+              <CardContent className="p-0 space-y-5">
+                <div className="flex gap-1">{[...Array(5)].map((_, i) => <Star key={i} />)}</div>
 
-                <div className="flex flex-col items-start gap-3.5 w-full">
-                  <h3 className="self-stretch mt-[-1.00px] [font-family:'Urbanist',Helvetica] font-semibold text-absolutewhite text-2xl tracking-[0] leading-9">
-                    {testimonial.title}
-                  </h3>
-                  <p className="self-stretch [font-family:'Urbanist',Helvetica] font-medium text-absolutewhite text-lg tracking-[0] leading-[27px]">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">{testimonial.title}</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">
                     {testimonial.content}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 w-full">
-                  <Avatar className="w-[60px] h-[60px] rounded-none">
+                <div className="flex items-center gap-3">
+                  <Avatar className="w-10 h-10 rounded-full overflow-hidden">
                     <AvatarImage
                       src={testimonial.profileImage}
                       alt={testimonial.author}
                       className="object-cover"
                     />
                   </Avatar>
-                  <div className="gap-0.5 flex flex-col items-start flex-1">
-                    <h4 className="self-stretch mt-[-1.00px] [font-family:'Urbanist',Helvetica] font-medium text-absolutewhite text-xl tracking-[0] leading-[30px]">
-                      {testimonial.author}
-                    </h4>
-                    <p className="self-stretch [font-family:'Urbanist',Helvetica] font-medium text-grey-60 text-lg tracking-[0] leading-[27px]">
-                      {testimonial.location}
-                    </p>
+                  <div className="text-sm">
+                    <p className="font-medium">{testimonial.author}</p>
+                    <p className="text-gray-500">{testimonial.location}</p>
                   </div>
                 </div>
               </CardContent>
@@ -121,29 +127,31 @@ export const HeroSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="flex w-full items-start justify-between pt-5 pb-0 px-0 border-t border-neutral-800">
-          <div className="[font-family:'Urbanist',Helvetica] font-medium text-xl tracking-[0] leading-[30px] whitespace-nowrap">
-            <span className="text-white">01</span>
-            <span className="text-[#999999]"> of 10</span>
-          </div>
-
-          <div className="inline-flex items-start gap-2.5">
-            <Button
-              variant="outline"
-              size="icon"
-              className="p-3.5 h-auto w-auto rounded-[69px] border border-solid border-neutral-800"
-            >
-              <ChevronLeftIcon className="w-[30px] h-[30px]" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="p-3.5 h-auto w-auto bg-grey-10 rounded-[69px] border border-solid border-neutral-800"
-            >
-              <ChevronRightIcon className="w-[30px] h-[30px]" />
-            </Button>
-          </div>
+        {/* Scroll Arrows */}
+        <div className="absolute -top-16 right-0 flex gap-3">
+          <Button
+            size="icon"
+            className="bg-neutral-800 p-2 rounded-full hover:bg-neutral-700 transition"
+            onClick={() => scroll("left")}
+          >
+            <ChevronLeftIcon className="text-white w-5 h-5" />
+          </Button>
+          <Button
+            size="icon"
+            className="bg-neutral-800 p-2 rounded-full hover:bg-neutral-700 transition"
+            onClick={() => scroll("right")}
+          >
+            <ChevronRightIcon className="text-white w-5 h-5" />
+          </Button>
         </div>
+      </div>
+
+      {/* Pagination */}
+      <div className="flex items-center justify-between border-t border-neutral-800 pt-6">
+        <p className="text-white text-base font-medium">
+          <span className="font-bold">01</span>{" "}
+          <span className="text-gray-500">of 10</span>
+        </p>
       </div>
     </section>
   );
