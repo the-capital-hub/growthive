@@ -4,11 +4,11 @@ import Logo from "../../../../Images/growthhivelogo.png";
 export const ClientTestimonialsSection = (): JSX.Element => {
 	const navItems = [
 		{ label: "Home", isActive: true },
-		{ label: "Startups", isActive: false },
-		{ label: "Investors", isActive: false },
-		{ label: "Portfolio", isActive: false },
-		{ label: "Team", isActive: false },
-		{ label: "Contact Us", isActive: false },
+		// { label: "Startups", isActive: false },
+		// { label: "Investors", isActive: false },
+		{ label: "Portfolio", isActive: false, href: "/portfolio"  },
+		{ label: "Team", isActive: false, href: "/contact-us"  },
+		{ label: "Contact Us", isActive: false, href: "/contact-us"  },
 	];
 
 	return (
@@ -33,7 +33,8 @@ export const ClientTestimonialsSection = (): JSX.Element => {
 						key={`${item.label}-${index}`}
 						className="px-2 py-2 rounded-[10px]"
 					>
-						<div
+						<a
+							href={item.href || "#"}
 							className={`text-lg cursor-pointer leading-[27px] font-['Urbanist',Helvetica] ${
 								item.isActive
 									? "text-[#ffc610] font-medium"
@@ -41,7 +42,8 @@ export const ClientTestimonialsSection = (): JSX.Element => {
 							}`}
 						>
 							{item.label}
-						</div>
+						</a>
+
 					</div>
 				))}
 			</nav>
