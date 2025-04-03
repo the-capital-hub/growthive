@@ -1,5 +1,5 @@
 import { CallToActionSection } from "./sections/CallToActionSection/CallToActionSection";
-import { ClientTestimonialsSection } from "./sections/ClientTestimonialsSection/ClientTestimonialsSection";
+import Navbar from "../../components/Navbar/Navbar";
 import { FooterSection } from "./sections/FooterSection";
 import { GrowthCardsSection } from "./sections/GrowthCardsSection";
 import { GrowthHivePerksSection } from "./sections/GrowthHivePerksSection";
@@ -63,10 +63,7 @@ export const LandingPage = (): JSX.Element => {
         </div>
 
         {/* Main content sections */}
-        <section className="relative w-full">
-          <ClientTestimonialsSection />
-        </section>
-
+        
         <section className="relative w-full">
           <WhatWeDoSection />
         </section>
@@ -89,10 +86,6 @@ export const LandingPage = (): JSX.Element => {
 
         <section className="relative w-full">
           <HeroSection />
-        </section>
-
-        <section className="relative w-full">
-          <CallToActionSection />
         </section>
 
         {/* Decorative elements */}

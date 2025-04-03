@@ -5,10 +5,10 @@ import {
   YoutubeIcon,
 } from "lucide-react";
 import React from "react";
-import { Button } from "../../../../components/ui/button";
-import { Input } from "../../../../components/ui/input";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
-export const CallToActionSection = (): JSX.Element => {
+const Footer = (): JSX.Element => {
   // Data for footer links
   const generalLinks = [
     { title: "About Us", href: "#" },
@@ -148,3 +148,5 @@ export const CallToActionSection = (): JSX.Element => {
     </footer>
   );
 };
+
+export default Footer;

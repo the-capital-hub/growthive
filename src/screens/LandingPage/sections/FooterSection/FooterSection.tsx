@@ -27,42 +27,42 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative flex flex-col w-full items-start gap-20 py-20 px-15 md:px-12 lg:px-24 bg-black overflow-hidden">
+    <section className="relative flex flex-col w-full items-start gap-16 py-16 px-6 sm:px-8 md:px-12 lg:px-24 bg-black overflow-hidden">
       {/* Background Design */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#fec00f22] rounded-full blur-3xl opacity-30 animate-pulse" />
-        <div className="absolute bottom-[-80px] right-[-80px] w-[300px] h-[300px] bg-[#fec00f33] rounded-full blur-2xl opacity-20" />
+        <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-[#fec00f22] rounded-full blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute bottom-[-80px] right-[-80px] w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] bg-[#fec00f33] rounded-full blur-2xl opacity-20" />
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col w-full items-start gap-6">
-        <h2 className="text-white text-[48px] md:text-[64px] font-bold leading-tight font-['Inter']">
+      <div className="relative z-10 flex flex-col w-full items-start gap-4">
+        <h2 className="text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] font-bold leading-tight font-['Inter']">
           GrowtHive Perks
         </h2>
-        <p className="text-white text-lg md:text-xl font-medium font-['Inter'] max-w-3xl">
+        <p className="text-white text-base sm:text-lg md:text-xl font-medium font-['Inter'] max-w-3xl">
           At GrowtHive, we go beyond just providing capital. Our mission is to
           support founders at every critical stage of their entrepreneurial journey.
         </p>
       </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-start justify-between gap-12 w-full">
+      <div className="relative z-10 flex flex-col-reverse md:flex-row items-start justify-between gap-12 w-full">
         {/* Perks Cards */}
-        <div className="flex flex-col gap-8 w-full md:w-[55%]">
+        <div className="flex flex-col gap-6 w-full md:w-[55%]">
           {perks.map((perk) => (
             <div
               key={perk.id}
-              className={`flex gap-4 rounded-2xl p-6 transition-all duration-300 hover:bg-[#ffffff0a] hover:shadow-lg ${
+              className={`flex gap-4 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:bg-[#ffffff0a] hover:shadow-lg ${
                 perk.highlighted ? "bg-[#ffffff1a]" : "bg-transparent"
               }`}
             >
               {perk.highlighted && (
                 <div className="w-[4px] bg-[#FEC00F] rounded-full" />
               )}
-              <div className="flex flex-col gap-3">
-                <h3 className="text-[#FEC00F] font-extrabold text-xl md:text-2xl font-['Inter'] leading-tight">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#FEC00F] font-extrabold text-lg sm:text-xl md:text-2xl font-['Inter'] leading-tight">
                   {perk.title}
                 </h3>
-                <p className="text-white text-base md:text-lg font-['Inter'] leading-relaxed">
+                <p className="text-white text-sm sm:text-base md:text-lg font-['Inter'] leading-relaxed">
                   {perk.description}
                 </p>
               </div>
@@ -75,7 +75,7 @@ export const FooterSection = (): JSX.Element => {
           <img
             src={Rocket}
             alt="GrowtHive rocket illustration"
-            className="w-full object-contain rounded-2xl"
+            className="w-full h-auto object-contain rounded-2xl"
           />
         </div>
       </div>

@@ -35,10 +35,10 @@ export const GrowthCardsSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-16 py-16 w-full bg-black">
       <div className="flex flex-col items-center max-w-4xl px-4 text-center">
-        <h2 className="font-['Urbanist'] font-extrabold text-[#ffffff1A] text-[160px] leading-none">
+        <h2 className="font-['Urbanist'] font-extrabold text-[#ffffff1A] text-[100px] sm:text-[160px] md:text-[160px] leading-none">
           GROW
         </h2>
-        <p className="font-['Inter'] font-medium text-white text-xl leading-[30px] mt-[-40px]">
+        <p className="font-['Inter'] font-medium text-white text-xl leading-[30px] mt-[20px]">
           At GrowtHive, our values drive the way we work with founders and
           investors, setting us apart
         </p>
@@ -48,7 +48,7 @@ export const GrowthCardsSection = (): JSX.Element => {
         {growthCards.map((card, index) => (
           <Card
             key={index}
-            className={`rounded-2xl overflow-hidden px-8 py-10 min-h-[230px] flex flex-col justify-center ${
+            className={`rounded-2xl overflow-hidden border-none px-8 py-10 min-h-[230px] flex flex-col justify-center ${
               card.variant === "gradient"
                 ? "bg-gradient-to-r from-black to-[#FEB916]"
                 : "bg-[#1a1a1a]"
