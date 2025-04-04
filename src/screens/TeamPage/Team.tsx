@@ -53,7 +53,7 @@ export default function Team() {
 			<main className="relative z-10 container mx-auto px-4 py-12">
 				{/* Meet the Team Section */}
 				<section className="text-center mb-20 pt-8">
-					<h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#ffc610] to-white bg-clip-text text-transparent mb-4">
+					<h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-4">
 						Meet the Team
 					</h1>
 					<h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -116,7 +116,7 @@ export default function Team() {
 
 				{/* Advisory Board Section */}
 				<section className="mb-16 border-gray-800 pt-12">
-					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#ffc610] to-white bg-clip-text text-transparent mb-8">
+					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
 						Our Advisory Board
 					</h2>
 
@@ -142,7 +142,7 @@ export default function Team() {
 
 				{/* Call to Action Section */}
 				<section className="text-center mb-16 border-gray-800 pt-12">
-					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#ffc610] to-white bg-clip-text text-transparent mb-8">
+					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
 						Join Us on This Journey!
 					</h2>
 

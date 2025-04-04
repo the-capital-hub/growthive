@@ -63,7 +63,7 @@ export const WhatWeDoSection = (): JSX.Element => {
 
               {/* Text */}
               <div className="font-outfit text-white text-sm sm:text-base font-normal whitespace-nowrap">
-                Trusted by <span className="font-semibold text-[#fcb513]">30 Crores</span>{" "}
+                Trusted by <span className="font-semibold text-[#facc15]">30 Crores</span>{" "}
                 User&apos;s
               </div>
             </CardContent>
@@ -75,7 +75,7 @@ export const WhatWeDoSection = (): JSX.Element => {
           <span
             className="bg-clip-text text-transparent"
             style={{
-              backgroundImage: `linear-gradient(to right, #FFC610 60%, #ffffff 100%)`
+              color: '#FACC15'
             }}
           >
             GrowtHive
@@ -95,7 +95,7 @@ export const WhatWeDoSection = (): JSX.Element => {
       {/* Call to action buttons */}
       <div className="flex flex-col sm:flex-row items-center mt-16 sm:mt-20 gap-4 z-10">
         <div className="w-full sm:w-[203px] h-[60px] sm:h-[66px] rounded-full border-[2px] border-[#ffffff63] p-[5px]">
-          <Button className="w-full h-full bg-[#ffc610] hover:bg-[#e6b20e] text-black rounded-full font-outfit font-semibold text-lg sm:text-xl">
+          <Button className="w-full h-full bg-[#facc15] hover:bg-[#e6b20e] text-black rounded-full font-outfit font-semibold text-lg sm:text-xl">
             Apply for Funding
           </Button>
         </div>
@@ -103,7 +103,7 @@ export const WhatWeDoSection = (): JSX.Element => {
         <div className="w-full sm:w-auto h-[60px] sm:h-[66px] p-[5px]">
           <Button
             variant="outline"
-            className="w-full sm:w-auto h-full rounded-full border border-solid bg-[#ffffff1a] border-[#ffffffcc] font-outfit font-normal sm:font-semibold text-white text-lg sm:text-xl hover:bg-[#ffc610] hover:text-black"
+            className="w-full sm:w-auto h-full rounded-full border border-solid bg-[#ffffff1a] border-[#ffffffcc] font-outfit font-normal sm:font-semibold text-white text-lg sm:text-xl hover:bg-[#facc15] hover:text-black"
           >
             Explore Startups
           </Button>
@@ -116,7 +116,7 @@ export const WhatWeDoSection = (): JSX.Element => {
         <span
           className="bg-clip-text text-transparent px-1"
           style={{
-            backgroundImage: `linear-gradient(to right, #FFC610 60%, #ffffff 100%)`
+            color: `#facc15`
           }}
         >
           15k companies

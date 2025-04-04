@@ -61,7 +61,7 @@ export default function Portfolio() {
 						GROWTH
 					</h1>
 
-					<h1 className="relative text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[88px] bg-gradient-to-r from-[#ffc610] to-white bg-clip-text text-transparent">
+					<h1 className="relative text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[88px] bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent">
 						OUR PORTFOLIO
 					</h1>
 
@@ -110,7 +110,7 @@ export default function Portfolio() {
 				</section>
 
 				<section className="mb-20">
-					<h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[60px] lg:leading-[88px] underline bg-gradient-to-r from-[#ffc610]  to-white bg-clip-text text-transparent">
+					<h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[60px] lg:leading-[88px] underline bg-gradient-to-r from-[#facc15]  to-white bg-clip-text text-transparent">
 						Our Investment Philosophy
 					</h2>
 					<p className="text-center max-w-4xl mx-auto mb-16 text-gray-300">
@@ -127,7 +127,7 @@ export default function Portfolio() {
 					</Button> */}
 
 					<div className="mx-auto h-[66px] w-[202px] flex flex-col gap-[7.61904764175415px] p-[5.333333492279053px] rounded-[146.2857208251953px] border-[2.2857143878936768px] border-solid border-white">
-						<div className="flex justify-center items-center gap-[7.61904764175415px] bg-[#ffc610] py-[11.5px] px-[10px] rounded-[83.80952453613281px] cursor-pointer">
+						<div className="flex justify-center items-center gap-[7.61904764175415px] bg-[#facc15] py-[11.5px] px-[10px] rounded-[83.80952453613281px] cursor-pointer">
 							<span className="font-semibold text-[20px] text-black">
 								Apply for Funding
 							</span>

@@ -59,7 +59,7 @@ export const GrowthHivePerksSection = (): JSX.Element => {
           >
             <CardContent className="h-full p-4 sm:p-[10px]">
               <div className="w-full h-full flex flex-col items-start justify-start gap-3 sm:gap-4 rounded-2xl border border-[#ffffff1a] backdrop-blur-[17px] px-6 sm:px-8 pt-5 sm:pt-6 pb-5 sm:pb-6 [background:radial-gradient(50%_50%_at_50%_50%,rgba(168,127,255,0.04)_0%,rgba(168,127,255,0)_100%),linear-gradient(0deg,rgba(4,1,21,0.1)_0%,rgba(4,1,21,0.1)_100%)]">
-                <h3 className="font-inter font-extrabold text-[#feb514] text-[22px] sm:text-[28px] md:text-[32px] lg:text-[26px] leading-snug text-left">
+                <h3 className="font-inter font-extrabold text-[#facc15] text-[22px] sm:text-[28px] md:text-[32px] lg:text-[26px] leading-snug text-left">
                   {perk.title}
                 </h3>
                 <p className="font-outfit font-normal text-[#c5c5c5] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[16px] text-left leading-relaxed">

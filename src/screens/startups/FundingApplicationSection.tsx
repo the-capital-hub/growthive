@@ -1,5 +1,45 @@
 import * as React from "react";
-import ApplicationStep from "./ApplicationStep";
+
+function ApplicationStep({
+  number,
+  title,
+  description,
+}: {
+  number: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="group relative flex flex-col gap-4 p-6 rounded-2xl bg-[#ffffff0a] border border-[#ffffff14] transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+      {/* Shooting star border animation - only on hover */}
+      <div className="absolute inset-0 rounded-2xl z-0 pointer-events-none">
+        {/* Top border */}
+        <span className="absolute left-0 top-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FEC00F] to-transparent opacity-0 group-hover:opacity-100 animate-border-top" />
+        {/* Right border */}
+        <span className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-[#FEC00F] to-transparent opacity-0 group-hover:opacity-100 animate-border-right" />
+        {/* Bottom border */}
+        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-l from-transparent via-[#FEC00F] to-transparent opacity-0 group-hover:opacity-100 animate-border-bottom" />
+        {/* Left border */}
+        <span className="absolute left-0 bottom-0 h-full w-[2px] bg-gradient-to-t from-transparent via-[#FEC00F] to-transparent opacity-0 group-hover:opacity-100 animate-border-left" />
+      </div>
+
+      <div className="relative z-10 flex flex-col gap-2">
+        <div className="flex items-center gap-3">
+          <div className="text-[#FEC00F] text-3xl font-extrabold font-['Inter'] drop-shadow-sm">
+            {number}
+          </div>
+          <h3 className="text-white text-xl sm:text-2xl font-bold font-['Inter']">
+            {title}
+          </h3>
+        </div>
+        <p className="text-white text-base sm:text-lg font-['Inter'] leading-relaxed opacity-90">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 
 function FundingApplicationSection() {
   const steps = [
@@ -25,16 +65,19 @@ function FundingApplicationSection() {
   return (
     <section className="px-5 py-0 mx-auto my-24 max-w-[1200px]">
       <div className="mb-16 text-center">
-        <h2 className="mb-5 text-7xl font-bold tracking-normal text-white leading-[64px] max-md:text-5xl">
+        <h2 className="mb-5 text-6xl md:text-7xl font-bold tracking-tight text-white leading-[64px] font-['Inter']">
           <span>How to </span>
-          <span className="bg-clip-text">Apply for Funding</span>
+          <span className="text-[#facc15]">
+            Apply for Funding
+          </span>
         </h2>
-        <p className="text-xl font-medium leading-8 text-white">
+        <p className="text-xl font-medium leading-8 text-white font-['Inter'] opacity-90 max-w-2xl mx-auto">
           We're always on the lookout for visionary founders and innovative
-          ideas. Applying for funding at GrowtHive is simple and efficient
+          ideas. Applying for funding at GrowtHive is simple and efficient.
         </p>
       </div>
-      <div className="flex flex-col gap-5">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {steps.map((step, index) => (
           <ApplicationStep
             key={index}

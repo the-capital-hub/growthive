@@ -76,6 +76,10 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
         "marquee": {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
@@ -84,10 +88,32 @@ module.exports = {
           '0%, 100%': { opacity: '0.8' },
           '50%': { opacity: '0.2' },
         },
+        "shoot": {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      
+        borderTop: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        borderRight: {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
+        borderBottom: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        borderLeft: {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0%)", opacity: "1" },
+        },
         "fadeInUp": {
           '0%': { opacity: 0, transform: 'translateY(20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
+        
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -95,6 +121,13 @@ module.exports = {
         "marquee": 'marquee 20s linear infinite',
         "twinkle": 'twinkle 2s infinite ease-in-out',
         "fadeInUp": 'fadeInUp 1s ease-out forwards',
+        "float": 'float 3s ease-in-out infinite',
+        "shoot": 'shoot 2s linear infinite',
+        'shoot-delay': 'shoot 2s linear infinite 1s',
+        "border-top": "borderTop 0.8s ease-out forwards",
+        "border-right": "borderRight 0.8s ease-out 0.8s forwards",
+        "border-bottom": "borderBottom 0.8s ease-out 1.6s forwards",
+        "border-left": "borderLeft 0.8s ease-out 2.4s forwards",
       },
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },

@@ -378,14 +378,14 @@ export default function ContactUs(): JSX.Element {
 									>
 										<path
 											d="M70 10L36 44"
-											stroke="#FFC610"
+											stroke="#facc15"
 											strokeWidth="2"
 											strokeLinecap="round"
 											strokeLinejoin="round"
 										/>
 										<path
 											d="M70 10L48 70L36 44L10 32L70 10Z"
-											stroke="#FFC610"
+											stroke="#facc15"
 											strokeWidth="2"
 											strokeLinecap="round"
 											strokeLinejoin="round"
