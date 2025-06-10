@@ -28,7 +28,7 @@ const processSteps: ProcessStep[] = [
 const ProcessSection: React.FC = () => {
   return (
     <section className="px-5 py-20 bg-white bg-opacity-0">
-      <h2 className="mb-10 text-4xl font-semibold text-center max-sm:text-3xl">
+      <h2 className="mb-10 text-4xl font-bold text-center sm:text-5xl md:text-6xl lg:text-7xl">
         How It Works
       </h2>
       <div className="grid gap-8 mx-auto my-0 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-w-[1200px] max-md:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">

@@ -65,13 +65,13 @@ function FundingApplicationSection() {
   return (
     <section className="px-5 py-0 mx-auto my-24 max-w-[1200px]">
       <div className="mb-16 text-center">
-        <h2 className="mb-5 text-6xl md:text-7xl font-bold tracking-tight text-white leading-[64px] font-['Inter']">
+        <h2 className="mb-5 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[64px] font-['Inter']">
           <span>How to </span>
           <span className="text-[#facc15]">
             Apply for Funding
           </span>
         </h2>
-        <p className="text-xl font-medium leading-8 text-white font-['Inter'] opacity-90 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl  font-medium leading-8 text-white font-['Inter'] opacity-90 max-w-2xl mx-auto">
           We're always on the lookout for visionary founders and innovative
           ideas. Applying for funding at GrowtHive is simple and efficient.
         </p>

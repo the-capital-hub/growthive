@@ -38,7 +38,7 @@ export const GrowthCardsSection = (): JSX.Element => {
         <h2 className="font-['Urbanist'] font-extrabold text-[#ffffff1A] text-[100px] sm:text-[160px] md:text-[160px] leading-none">
           GROW
         </h2>
-        <p className="font-['Inter'] font-medium text-white text-xl leading-[30px] mt-[20px]">
+        <p className="font-['Inter'] font-medium text-white text-base sm:text-lg md:text-xl  leading-[30px] mt-[20px]">
           At GrowtHive, our values drive the way we work with founders and
           investors, setting us apart
         </p>
@@ -64,7 +64,7 @@ export const GrowthCardsSection = (): JSX.Element => {
                   {card.title}
                 </h3>
               </div>
-              <p className="text-white text-base font-['Outfit'] leading-relaxed">
+              <p className="text-white text-base md:text-lg  font-['Outfit'] leading-relaxed">
                 {card.description}
               </p>
             </CardContent>

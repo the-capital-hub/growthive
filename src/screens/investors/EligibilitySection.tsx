@@ -10,11 +10,11 @@ const eligibilityCriteria = [
 const EligibilitySection: React.FC = () => {
   return (
     <section className="px-5 py-20 mx-auto my-0 max-w-[1200px]">
-      <h2 className="mb-10 text-4xl font-semibold text-center max-sm:text-3xl">
+      <h2 className="mb-10 text-4xl font-bold text-center sm:text-5xl md:text-6xl lg:text-7xl">
         Who Can Join?
       </h2>
       <div className="flex justify-between items-center">
-        <ul className="text-xl">
+        <ul className="text-xl font-medium">
           {eligibilityCriteria.map((criteria, index) => (
             <li key={index} className="gap-2.5 mb-5">
               {criteria}
