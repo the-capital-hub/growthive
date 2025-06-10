@@ -27,7 +27,7 @@ function WhyGrowtHiveSection() {
 
   return (
     <section className="px-5 py-0 mx-auto my-24 text-center max-w-[1200px]">
-      <h2 className="mb-16 text-7xl font-bold text-white max-md:text-5xl">
+      <h2 className="mb-16 lg:text-7xl text-5xl font-bold text-white max-md:text-6xl">
         <span>Why </span>
         <span className="text-yellow-400">GrowtHive?</span>
       </h2>

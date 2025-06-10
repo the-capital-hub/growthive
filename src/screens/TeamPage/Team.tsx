@@ -21,10 +21,11 @@ export default function Team() {
 			name: "Priya Roy",
 			title: "Chief Investment Officer (CIO)",
 			subtitle: "Strategic Thinker | Angel Investor | Deal-Maker",
-			description: "",
+			description:
+				"A seasoned investment professional with deep expertise in venture capital and startup ecosystems. Priya leads GrowthHive's investment strategy, bringing her sharp analytical skills and proven track record in identifying high-potential ventures.",
 			image: Avatar,
 			linkedin: "https://linkedin.com/in/priyaroy",
-			featured: false,
+			featured: true,
 		},
 		{
 			id: 3,
@@ -46,6 +47,16 @@ export default function Team() {
 			linkedin: "https://linkedin.com/in/geetha",
 			featured: false,
 		},
+		{
+			id: 5,
+			name: "Amit Shah",
+			title: "Head of Technology",
+			subtitle: "Tech Innovator | Cloud Expert | System Architect",
+			description: "",
+			image: Avatar,
+			linkedin: "https://linkedin.com/in/amitshah",
+			featured: false,
+		}
 	];
 
 	return (
@@ -53,14 +64,14 @@ export default function Team() {
 			<main className="relative z-10 container mx-auto px-4 py-12">
 				{/* Meet the Team Section */}
 				<section className="text-center mb-20 pt-8">
-					<h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-4">
+					<h1 className="text-5xl lg:text-7xl md:text-6xl font-bold bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-4">
 						Meet the Team
 					</h1>
 					<h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
 						The Visionaries Behind GrowthHive
 					</h2>
 
-					<p className="text-center max-w-4xl mx-auto mb-16 text-gray-300">
+					<p className="text-center max-w-4xl text-base sm:text-lg md:text-xl font-inter font-medium mx-auto mb-16 text-gray-300">
 						At GrowthHive, our success is driven by a passionate team of
 						investors, operators, and entrepreneurs who believe in backing
 						founders with big visions and bold idea.
@@ -78,7 +89,8 @@ export default function Team() {
 							<span className="text-white">Leadership</span>
 						</h2>
 
-						<div className="grid grid-cols-1 gap-8 mb-12">
+						{/* Top row - 2 featured members */}
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 							{founders
 								.filter((founder) => founder.featured)
 								.map((founder) => (
@@ -94,33 +106,34 @@ export default function Team() {
 									/>
 								))}
 						</div>
-					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{founders
-							.filter((founder) => !founder.featured)
-							.map((founder) => (
-								<TeamMemberCard
-									key={founder.id}
-									name={founder.name}
-									title={founder.title}
-									subtitle={founder.subtitle}
-									description={founder.description}
-									image={founder.image}
-									linkedin={founder.linkedin}
-									featured={founder.featured}
-								/>
-							))}
+						{/* Bottom row - 3 non-featured members */}
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+							{founders
+								.filter((founder) => !founder.featured)
+								.map((founder) => (
+									<TeamMemberCard
+										key={founder.id}
+										name={founder.name}
+										title={founder.title}
+										subtitle={founder.subtitle}
+										description={founder.description}
+										image={founder.image}
+										linkedin={founder.linkedin}
+										featured={founder.featured}
+									/>
+								))}
+						</div>
 					</div>
 				</section>
 
 				{/* Advisory Board Section */}
 				<section className="mb-16 border-gray-800 pt-12">
-					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
+					<h2 className="text-4xl font-bold text-center sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
 						Our Advisory Board
 					</h2>
 
-					<p className="text-center max-w-4xl mx-auto mb-16 text-gray-300">
+					<p className="text-center text-base sm:text-lg md:text-xl font-inter font-medium max-w-4xl mx-auto mb-16 text-gray-300">
 						Our advisors are experienced entrepreneurs, investors, and industry
 						experts who bring a wealth of knowledge to help guide GrowthHive and
 						our portfolio companies to success.
@@ -142,11 +155,11 @@ export default function Team() {
 
 				{/* Call to Action Section */}
 				<section className="text-center mb-16 border-gray-800 pt-12">
-					<h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
+					<h2 className="text-4xl font-bold text-center sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent mb-8">
 						Join Us on This Journey!
 					</h2>
 
-					<p className="text-center max-w-4xl mx-auto mb-16 text-gray-300">
+					<p className="text-center text-base sm:text-lg md:text-xl font-inter font-medium max-w-4xl mx-auto mb-16 text-gray-300">
 						At GrowthHive, we're more than just a team – we're a community
 						committed to empowering the next wave of founders and building the
 						future of innovation.

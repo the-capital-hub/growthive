@@ -38,7 +38,7 @@ export const FooterSection = (): JSX.Element => {
       <div className="relative z-10 flex flex-col gap-14">
         {/* Header */}
         <div className="flex flex-col gap-4">
-          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-['Inter']">
+          <h2 className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-['Inter']">
             GrowtHive Perks
           </h2>
           <p className="text-white text-base sm:text-lg md:text-xl font-medium font-['Inter'] max-w-3xl">

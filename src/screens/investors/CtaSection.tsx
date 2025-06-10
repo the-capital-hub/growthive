@@ -3,7 +3,7 @@ import * as React from "react";
 const CtaSection: React.FC = () => {
   return (
     <section className="px-5 py-20 text-center">
-      <p className="mx-auto mt-0 mb-8 text-2xl max-w-[800px]">
+      <p className="mx-auto mt-0 mb-8 font-medium text-2xl max-w-[800px]">
         Join our exclusive investor network and start backing the next wave of
         disruptive startups.
       </p>
