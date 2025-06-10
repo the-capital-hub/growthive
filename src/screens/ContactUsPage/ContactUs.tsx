@@ -107,8 +107,10 @@ export default function ContactUs(): JSX.Element {
 					variants={containerVariants}
 				>
 					<motion.div className="text-center mb-12" variants={itemVariants}>
-						<h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
-						<p className="text-gray-300">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+							Contact Us
+						</h1>
+						<p className="text-gray-300 text-base sm:text-lg md:text-xl font-inter font-medium">
 							Our experts will be happy to assist you with your queries
 						</p>
 					</motion.div>

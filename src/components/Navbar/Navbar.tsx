@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import Logo from "../../Images/growthhivelogo.png";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { label: "Home", isActive: true, href: "/" },
-    { label: "Startups", isActive: false, href: "/startups" },
-    { label: "Investors", isActive: false, href: "/investors" },
-    { label: "Portfolio", isActive: false, href: "/portfolio" },
-    { label: "Team", isActive: false, href: "/team" },
-    { label: "Contact Us", isActive: false, href: "/contact-us" },
+    { label: "Home", href: "/" },
+    { label: "Startups", href: "/startups" },
+    { label: "Investors", href: "/investors" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Team", href: "/team" },
+    { label: "Contact Us", href: "/contact-us" },
   ];
 
   return (
@@ -23,22 +25,22 @@ const Navbar = (): JSX.Element => {
 
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img className="h-[46px] w-auto" alt="Growth Hive Logo" src={Logo} />
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item, index) => (
-            <a
+            <Link
               key={`${item.label}-${index}`}
-              href={item.href || "#"}
+              to={item.href}
               className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-yellow-400 ${
-                item.isActive ? "text-yellow-400" : "text-white/80"
+                location.pathname === item.href ? "text-yellow-400" : "text-white/80"
               }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -67,15 +69,16 @@ const Navbar = (): JSX.Element => {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-4 flex flex-col gap-4 px-4">
           {navItems.map((item, index) => (
-            <a
+            <Link
               key={`${item.label}-mobile-${index}`}
-              href={item.href || "#"}
+              to={item.href}
               className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-yellow-400 ${
-                item.isActive ? "text-yellow-400" : "text-white/80"
+                location.pathname === item.href ? "text-yellow-400" : "text-white/80"
               }`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button
             variant="outline"

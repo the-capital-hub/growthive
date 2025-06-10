@@ -32,7 +32,7 @@ const benefits: BenefitItem[] = [
 const BenefitsSection: React.FC = () => {
   return (
     <section className="px-5 py-20 mx-auto my-0 max-w-[1200px]">
-      <h2 className="mb-10 text-4xl font-semibold text-center max-sm:text-3xl">
+      <h2 className="mb-10 text-4xl text-center sm:text-5xl md:text-6xl lg:text-7xl font-bold">
         <span>Why Invest with </span>
         <span className="text-yellow-400">GrowtHive</span>
         <span>?</span>

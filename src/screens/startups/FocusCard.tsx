@@ -7,10 +7,14 @@ interface FocusCardProps {
 
 function FocusCard({ title, description }: FocusCardProps) {
   return (
-    <div className="p-8 rounded-3xl border border-solid bg-neutral-900 border-white border-opacity-10">
-      <h3 className="mb-4 text-2xl font-semibold text-white">{title}</h3>
-      <p className="text-base leading-relaxed text-white">{description}</p>
-    </div>
+    <article className="p-8 rounded-xl bg-white bg-opacity-10">
+      <h3 className="mb-4 text-[22px] sm:text-[28px] md:text-[32px] lg:text-[26px] text-white font-bold">
+        {title}
+      </h3>
+      <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[16px] text-white opacity-80">
+        {description}
+      </p>
+    </article>
   );
 }
 

@@ -74,10 +74,10 @@ export const HeroSection = (): JSX.Element => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="max-w-3xl space-y-4">
-          <h2 className="text-white text-4xl font-semibold">
+          <h2 className="text-white text-4xl lg:text-7xl md:text-6xl sm:text-5xl  font-bold">
             What Our Clients Say
           </h2>
-          <p className="text-gray-400 text-base leading-relaxed">
+          <p className="text-gray-400 text-base leading-relaxed font-inter sm:text-lg md:text-xl font-medium">
             Read the success stories and heartfelt testimonials from our valued
             clients. Discover why they chose Estatein for their real estate
             needs.

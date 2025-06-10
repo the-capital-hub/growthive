@@ -61,11 +61,11 @@ export default function Portfolio() {
 						GROWTH
 					</h1>
 
-					<h1 className="relative text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[88px] bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent">
+					<h1 className="relative text-4xl md:text-5xl lg:text-7xl text-center mb-8 font-bold xl:text-[80px] leading-[88px] bg-gradient-to-r from-[#facc15] to-white bg-clip-text text-transparent">
 						OUR PORTFOLIO
 					</h1>
 
-					<p className="relative text-center max-w-4xl mx-auto mb-24 text-gray-300">
+					<p className="relative text-center max-w-4xl text-base sm:text-lg md:text-xl font-inter font-medium mx-auto mb-24 text-gray-300">
 						At GrowthVec, we're honored to partner with ambitious founders
 						transforming industries. Each startup in our portfolio represents
 						bold ideas executed with precision, disrupting markets and shaping
@@ -113,7 +113,7 @@ export default function Portfolio() {
 					<h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-8 font-bold xl:text-[80px] leading-[60px] lg:leading-[88px] underline bg-gradient-to-r from-[#facc15]  to-white bg-clip-text text-transparent">
 						Our Investment Philosophy
 					</h2>
-					<p className="text-center max-w-4xl mx-auto mb-16 text-gray-300">
+					<p className="text-center max-w-4xl text-base sm:text-lg md:text-xl font-inter font-medium mx-auto mb-16 text-gray-300">
 						We back founders who are bold enough to think big and execute fast.
 						From fintech to fashion, our portfolio reflects a diverse mix of
 						sectors, each with groundbreaking potential.

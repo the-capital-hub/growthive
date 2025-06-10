@@ -42,10 +42,10 @@ export const GrowthHivePerksSection = (): JSX.Element => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <h2 className="pb-[26px] font-['Inter',Helvetica] font-bold text-[36px] sm:text-[48px] md:text-[68px] text-[#a9a9a9] animate-fadeInUp">
+        <h2 className="pb-[26px] leading-tight font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#a9a9a9] animate-fadeInUp">
           What We Do
         </h2>
-        <p className="px-4 max-w-[1250px] font-['Inter',Helvetica] font-medium text-[#a9a9a9] text-[16px] sm:text-[20px] md:text-[22px] leading-[30px] animate-fadeInUp">
+        <p className="px-4 max-w-[1250px] font-Inter font-medium text-[#a9a9a9] text-base sm:text-lg md:text-xl leading-[30px] animate-fadeInUp">
           At GrowtHive, we connect visionary early-stage startups with a trusted network of angel investors. Our mission is to empower founders who are driven by bold ambitions and a vision to shape the future.
         </p>
       </div>
@@ -62,7 +62,7 @@ export const GrowthHivePerksSection = (): JSX.Element => {
                 <h3 className="font-inter font-extrabold text-[#facc15] text-[22px] sm:text-[28px] md:text-[32px] lg:text-[26px] leading-snug text-left">
                   {perk.title}
                 </h3>
-                <p className="font-outfit font-normal text-[#c5c5c5] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[16px] text-left leading-relaxed">
+                <p className="font-outfit font-normal text-[#c5c5c5] text-base sm:text-base md:text-lg  lg:text-xl text-left leading-relaxed">
                   {perk.description}
                 </p>
               </div>
